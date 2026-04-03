@@ -60,6 +60,7 @@ export default function Footer() {
                 ["How It Works", "#how-it-works"],
                 ["Features", "#features"],
                 ["Commands", "#commands"],
+                ["MCP", "#mcp"],
                 ["Install", "#install"],
                 ["FAQ", "#faq"],
               ].map(([label, href]) => (

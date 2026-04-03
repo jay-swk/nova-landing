@@ -32,7 +32,7 @@ const commands = [
     desc: "적대적 코드 리뷰",
     when: "코드 품질 점검",
     category: "Verify",
-    flags: ["--fast", "--strict", "--fix", "--jury"],
+    flags: ["--fast", "--strict", "--summary", "--fix", "--jury"],
   },
   {
     cmd: "/nova:verify",
@@ -90,6 +90,13 @@ const commands = [
     category: "Analyze",
     flags: [],
   },
+  {
+    cmd: "/nova:orchestrate",
+    desc: "설계→구현→검증→수정 전체 사이클 자동화",
+    when: "복잡한 멀티 스텝 작업",
+    category: "Automate",
+    flags: ["--design-only", "--skip-qa", "--strict"],
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -120,13 +127,13 @@ export default function CommandsSection() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/5 text-xs text-[#a855f7] font-mono mb-4">
-            12 Commands
+            13 Commands
           </div>
           <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#f0f0ff] mb-4">
             필요할 때 직접 제어
           </h2>
           <p className="text-[#8888aa] max-w-xl mx-auto">
-            자동 적용 규칙 위에 추가 제어가 필요할 때 사용하는 12개 커맨드.
+            자동 적용 규칙 위에 추가 제어가 필요할 때 사용하는 13개 커맨드.
           </p>
         </motion.div>
 
