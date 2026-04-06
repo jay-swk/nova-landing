@@ -39,9 +39,9 @@ export default function CatchesSection() {
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="rounded-2xl border border-[#ef4444]/20 bg-[#111118] overflow-hidden"
         >
           <div className="px-6 py-5 bg-[#ef4444]/5 border-b border-[#ef4444]/20 flex items-center gap-3">
@@ -60,9 +60,9 @@ export default function CatchesSection() {
             {catches.map((c, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -10 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
                 className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_2fr] gap-3 px-6 py-4 hover:bg-[#1a1a24] transition-colors"
               >
                 <div className="flex items-center gap-3">
