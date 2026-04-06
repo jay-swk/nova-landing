@@ -43,7 +43,7 @@ const problems = [
 
 export default function ProblemSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section id="problem" className="py-24 px-4 sm:px-6 bg-[#0a0a0f]">
