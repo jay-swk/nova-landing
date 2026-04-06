@@ -9,7 +9,6 @@ import DemoSection from "@/components/sections/DemoSection";
 import CommandsSection from "@/components/sections/CommandsSection";
 import OrbitSection from "@/components/sections/OrbitSection";
 import MCPSection from "@/components/sections/MCPSection";
-import OrbitSection from "@/components/sections/OrbitSection";
 import InstallSection from "@/components/sections/InstallSection";
 import FAQSection from "@/components/sections/FAQSection";
 
