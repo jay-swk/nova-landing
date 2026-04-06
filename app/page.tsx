@@ -8,6 +8,7 @@ import CatchesSection from "@/components/sections/CatchesSection";
 import DemoSection from "@/components/sections/DemoSection";
 import CommandsSection from "@/components/sections/CommandsSection";
 import MCPSection from "@/components/sections/MCPSection";
+import OrbitSection from "@/components/sections/OrbitSection";
 import InstallSection from "@/components/sections/InstallSection";
 import FAQSection from "@/components/sections/FAQSection";
 
@@ -27,6 +28,7 @@ export default function Home() {
         <DemoSection />
         <CommandsSection />
         <MCPSection />
+        <OrbitSection />
         <InstallSection />
         <FAQSection />
       </main>
