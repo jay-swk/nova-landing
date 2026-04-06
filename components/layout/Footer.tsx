@@ -61,6 +61,7 @@ export default function Footer() {
                 ["Features", "#features"],
                 ["Commands", "#commands"],
                 ["MCP", "#mcp"],
+                ["Orbit", "#orbit"],
                 ["Install", "#install"],
                 ["FAQ", "#faq"],
               ].map(([label, href]) => (
