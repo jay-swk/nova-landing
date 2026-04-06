@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Demo", href: "#demo" },
   { label: "Commands", href: "#commands" },
+  { label: "Orbit", href: "#orbit" },
   { label: "MCP", href: "#mcp" },
   { label: "Orbit", href: "#orbit" },
   { label: "Install", href: "#install" },
