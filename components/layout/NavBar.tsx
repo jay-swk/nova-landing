@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Demo", href: "#demo" },
   { label: "Commands", href: "#commands" },
   { label: "MCP", href: "#mcp" },
+  { label: "Orbit", href: "#orbit" },
   { label: "Install", href: "#install" },
 ];
 
