@@ -8,7 +8,7 @@
 
   --color-text-primary: #f0f0ff;
   --color-text-secondary: #8888aa;
-  --color-text-muted: #444466;
+  --color-text-muted: #8080b0;
 
   --color-brand-purple: #7c3aed;
   --color-brand-blue: #2563eb;
@@ -124,6 +124,51 @@ body {
 
 .glow-text {
   text-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+/* Keyboard focus styles */
+:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: #7c3aed;
+  color: #f0f0ff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  left: 0;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

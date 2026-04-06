@@ -36,8 +36,8 @@ export default function NavBar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="메인 네비게이션">
+        <a href="#hero" className="flex items-center gap-2 group" aria-label="Nova 홈">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#2563eb] flex items-center justify-center text-white font-bold text-sm font-mono shadow-lg group-hover:shadow-purple-500/30 transition-shadow">
             N
           </div>
@@ -80,7 +80,8 @@ export default function NavBar() {
           <button
             className="md:hidden p-2 text-[#8888aa] hover:text-[#f0f0ff] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={menuOpen}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {menuOpen ? (

@@ -104,7 +104,7 @@ export default function TerminalWindow({
       case "warn":
         return "text-[#eab308]";
       case "comment":
-        return "text-[#444466]";
+        return "text-[#8888aa]";
       case "blank":
         return "";
       default:
@@ -125,10 +125,13 @@ export default function TerminalWindow({
           <div className="w-3 h-3 rounded-full bg-[#eab308]/70" />
           <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
         </div>
-        <span className="ml-2 text-xs text-[#444466] font-mono">{title}</span>
+        <span className="ml-2 text-xs text-[#8080b0] font-mono">{title}</span>
       </div>
       <div
         ref={containerRef}
+        role="log"
+        aria-label={`${title} 터미널 출력`}
+        aria-live="polite"
         className="p-4 font-mono text-sm leading-6 h-80 overflow-y-auto scrollbar-thin"
         style={{ scrollbarColor: "#3a3a5a #0d0d15" }}
       >

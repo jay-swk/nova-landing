@@ -164,7 +164,7 @@ export default function CommandsSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="rounded-2xl border border-[#2a2a3a] bg-[#111118] overflow-hidden"
         >
-          <div className="hidden md:grid grid-cols-[auto_1fr_1fr_auto] gap-4 px-5 py-3 bg-[#0d0d15] border-b border-[#2a2a3a] text-xs font-mono text-[#444466] uppercase tracking-wider">
+          <div className="hidden md:grid grid-cols-[auto_1fr_1fr_auto] gap-4 px-5 py-3 bg-[#0d0d15] border-b border-[#2a2a3a] text-xs font-mono text-[#8080b0] uppercase tracking-wider">
             <div>Command</div>
             <div>Description</div>
             <div>When to use</div>
@@ -183,7 +183,9 @@ export default function CommandsSection() {
                 <div
                   className="w-2 h-2 rounded-full mt-1.5 shrink-0"
                   style={{ background: categoryColors[cmd.category] ?? "#7c3aed" }}
+                  aria-hidden="true"
                 />
+                <span className="sr-only">{cmd.category}</span>
                 <code className="text-[#a855f7] font-mono text-sm whitespace-nowrap font-semibold">
                   {cmd.cmd}
                 </code>

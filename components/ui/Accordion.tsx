@@ -27,9 +27,11 @@ export default function Accordion({ items }: AccordionProps) {
           }`}
         >
           <button
+            id={`accordion-trigger-${index}`}
             className="w-full px-6 py-4 text-left flex items-center justify-between gap-4"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
+            aria-controls={openIndex === index ? `accordion-panel-${index}` : undefined}
           >
             <span className="text-[#f0f0ff] font-medium text-sm sm:text-base">
               {item.question}
@@ -53,7 +55,12 @@ export default function Accordion({ items }: AccordionProps) {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.25, ease: "easeInOut" }}
               >
-                <div className="px-6 pb-5 text-sm text-[#8888aa] leading-relaxed border-t border-[#2a2a3a] pt-4">
+                <div
+                  id={`accordion-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`accordion-trigger-${index}`}
+                  className="px-6 pb-5 text-sm text-[#8888aa] leading-relaxed border-t border-[#2a2a3a] pt-4"
+                >
                   {item.answer}
                 </div>
               </motion.div>

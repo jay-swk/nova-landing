@@ -35,7 +35,7 @@ export default function CatchesSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-16 px-4 sm:px-6 bg-[#0d0d15]">
+    <section id="catches" aria-label="Nova가 잡아내는 결함" className="py-16 px-4 sm:px-6 bg-[#0d0d15]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
@@ -51,7 +51,7 @@ export default function CatchesSection() {
               </svg>
             </div>
             <div>
-              <h3 className="text-[#f0f0ff] font-semibold">Nova가 잡아내는 결함</h3>
+              <h2 className="text-[#f0f0ff] font-semibold text-base">Nova가 잡아내는 결함</h2>
               <p className="text-xs text-[#8888aa]">CI에서 의도적 결함 코드로 자가 검증 테스트 실행</p>
             </div>
           </div>

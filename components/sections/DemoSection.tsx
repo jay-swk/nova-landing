@@ -145,10 +145,14 @@ export default function DemoSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="flex gap-2 mb-6 bg-[#111118] p-1 rounded-xl border border-[#2a2a3a] w-fit mx-auto">
+          <div className="flex gap-2 mb-6 bg-[#111118] p-1 rounded-xl border border-[#2a2a3a] w-fit mx-auto" role="tablist" aria-label="복잡도별 데모">
             {demos.map((demo, i) => (
               <button
                 key={i}
+                id={`demo-tab-${i}`}
+                role="tab"
+                aria-selected={activeTab === i}
+                aria-controls="demo-tabpanel"
                 onClick={() => setActiveTab(i)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeTab === i
@@ -159,13 +163,15 @@ export default function DemoSection() {
                 <span
                   className="w-2 h-2 rounded-full"
                   style={{ background: demo.complexityColor }}
+                  aria-hidden="true"
                 />
                 {demo.label}
+                <span className="sr-only">({demo.complexity})</span>
               </button>
             ))}
           </div>
 
-          <div className="mb-4 flex items-center justify-between">
+          <div id="demo-tabpanel" role="tabpanel" aria-labelledby={`demo-tab-${activeTab}`} className="mb-4 flex items-center justify-between">
             <div>
               <span
                 className="inline-flex items-center gap-1.5 text-xs font-mono px-2 py-0.5 rounded"
@@ -185,6 +191,7 @@ export default function DemoSection() {
                 setIsPlaying(false);
                 setTimeout(() => setIsPlaying(true), 50);
               }}
+              aria-label="데모 다시 재생"
               className="text-xs text-[#8888aa] hover:text-[#f0f0ff] transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#2a2a3a] hover:border-[#3a3a5a]"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

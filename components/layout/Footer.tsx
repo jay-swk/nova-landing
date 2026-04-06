@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#2a2a3a] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#444466]">
+          <p className="text-xs text-[#8080b0]">
             MIT License —{" "}
             <a
               href="https://spacewalk.tech"
@@ -94,7 +94,7 @@ export default function Footer() {
               href="https://github.com/TeamSPWK/nova"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#444466] hover:text-[#8888aa] transition-colors"
+              className="text-[#8080b0] hover:text-[#8888aa] transition-colors"
               aria-label="GitHub"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

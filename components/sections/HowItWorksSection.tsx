@@ -107,7 +107,7 @@ export default function HowItWorksSection() {
                 </div>
                 <div className="font-bold text-[#f0f0ff] text-lg mb-1">{step.label}</div>
                 <div className="text-xs text-[#8888aa] font-mono">{step.sublabel}</div>
-                <div className="text-xs text-[#444466] mt-2">{step.desc}</div>
+                <div className="text-xs text-[#8080b0] mt-2">{step.desc}</div>
               </motion.div>
 
               {i < steps.length - 1 && (
@@ -115,6 +115,7 @@ export default function HowItWorksSection() {
                   initial={{ opacity: 0, scaleX: 0 }}
                   animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
                   transition={{ duration: 0.4, delay: i * 0.2 + 0.3 }}
+                  aria-hidden="true"
                   className="hidden md:flex flex-col items-center gap-1 shrink-0"
                 >
                   <svg
@@ -166,7 +167,7 @@ export default function HowItWorksSection() {
                   {i + 1}
                 </div>
                 <div className="text-[#f0f0ff] text-sm font-medium mb-1">{dim.label}</div>
-                <div className="text-[#444466] text-xs">{dim.desc}</div>
+                <div className="text-[#8080b0] text-xs">{dim.desc}</div>
               </motion.div>
             ))}
           </div>
