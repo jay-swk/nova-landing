@@ -221,7 +221,7 @@ export default function HeroSection() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl font-bold gradient-text">{stat.num}</div>
-              <div className="text-xs text-[#444466] font-mono mt-0.5">{stat.label}</div>
+              <div className="text-xs text-[#8080b0] font-mono mt-0.5">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -238,17 +238,17 @@ export default function HeroSection() {
               <div className="w-3 h-3 rounded-full bg-[#eab308]/70" />
               <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
             </div>
-            <span className="ml-2 text-xs text-[#444466] font-mono">terminal</span>
+            <span className="ml-2 text-xs text-[#8080b0] font-mono">terminal</span>
           </div>
           <div className="p-4 font-mono text-sm leading-7">
-            <div className="text-[#444466]"># Install Nova (30 seconds)</div>
+            <div className="text-[#8080b0]"># Install Nova (30 seconds)</div>
             <div className="text-[#f0f0ff]">
               <span className="text-[#7c3aed]">$</span> claude plugin marketplace add TeamSPWK/nova
             </div>
             <div className="text-[#f0f0ff]">
               <span className="text-[#7c3aed]">$</span> claude plugin install nova@nova-marketplace
             </div>
-            <div className="text-[#444466] mt-1"># Start immediately</div>
+            <div className="text-[#8080b0] mt-1"># Start immediately</div>
             <div className="text-[#f0f0ff]">
               <span className="text-[#7c3aed]">$</span> /nova:next
             </div>
@@ -265,7 +265,7 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <a href="#problem" className="flex flex-col items-center gap-2 text-[#444466] hover:text-[#8888aa] transition-colors">
+        <a href="#problem" aria-label="아래로 스크롤" className="flex flex-col items-center gap-2 text-[#8080b0] hover:text-[#8888aa] transition-colors">
           <span className="text-xs font-mono">scroll</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}

@@ -14,8 +14,11 @@ import FAQSection from "@/components/sections/FAQSection";
 export default function Home() {
   return (
     <>
+      <a href="#main-content" className="skip-to-content">
+        본문으로 건너뛰기
+      </a>
       <NavBar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <ProblemSection />
         <HowItWorksSection />

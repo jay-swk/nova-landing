@@ -131,16 +131,16 @@ export default function MCPSection() {
             <div className="rounded-xl border border-[#2a2a3a] bg-[#111118] p-5 font-mono text-sm">
               <div className="flex items-center gap-3 text-[#8888aa] mb-3">
                 <span className="text-[#f0f0ff]">어느 프로젝트든</span>
-                <span className="text-[#444466]">→</span>
+                <span className="text-[#8080b0]">→</span>
                 <span className="text-[#f0f0ff]">Claude Code</span>
-                <span className="text-[#444466]">→</span>
+                <span className="text-[#8080b0]">→</span>
                 <span className="text-[#a855f7]">Nova MCP</span>
               </div>
               <div className="border-t border-[#2a2a3a] pt-3 space-y-1.5 text-xs">
-                <div><span className="text-[#60a5fa]">get_rules()</span> <span className="text-[#444466]">→</span> <span className="text-[#8888aa]">Nova 규칙 전문</span></div>
-                <div><span className="text-[#60a5fa]">get_state()</span> <span className="text-[#444466]">→</span> <span className="text-[#8888aa]">NOVA-STATE.md</span></div>
-                <div><span className="text-[#60a5fa]">verify()</span> <span className="text-[#444466]">→</span> <span className="text-[#8888aa]">검증 체크리스트</span></div>
-                <div><span className="text-[#60a5fa]">orchestrate()</span> <span className="text-[#444466]">→</span> <span className="text-[#8888aa]">에이전트 편성 가이드</span></div>
+                <div><span className="text-[#60a5fa]">get_rules()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">Nova 규칙 전문</span></div>
+                <div><span className="text-[#60a5fa]">get_state()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">NOVA-STATE.md</span></div>
+                <div><span className="text-[#60a5fa]">verify()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">검증 체크리스트</span></div>
+                <div><span className="text-[#60a5fa]">orchestrate()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">에이전트 편성 가이드</span></div>
               </div>
             </div>
           </motion.div>
@@ -168,7 +168,7 @@ export default function MCPSection() {
                       <code className="text-[#f0f0ff] text-sm font-mono font-semibold">{tool.name}</code>
                       <span className="text-xs text-[#8888aa]">{tool.desc}</span>
                     </div>
-                    <p className="text-xs text-[#444466] mt-0.5">{tool.detail}</p>
+                    <p className="text-xs text-[#8080b0] mt-0.5">{tool.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -183,7 +183,7 @@ export default function MCPSection() {
           className="max-w-2xl mx-auto"
         >
           <CodeBlock code={setupCode} language="bash" />
-          <p className="text-center text-xs text-[#444466] mt-3">
+          <p className="text-center text-xs text-[#8080b0] mt-3">
             플러그인 설치만으로 MCP 서버가 자동 활성화됩니다. 별도 빌드나 설정이 필요 없습니다.
           </p>
         </motion.div>

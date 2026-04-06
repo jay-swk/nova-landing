@@ -42,7 +42,7 @@ export default function CodeBlock({
             <div className="w-2.5 h-2.5 rounded-full bg-[#2a2a3a]" />
             <div className="w-2.5 h-2.5 rounded-full bg-[#2a2a3a]" />
           </div>
-          <span className="text-xs text-[#444466] font-mono">{language}</span>
+          <span className="text-xs text-[#8080b0] font-mono">{language}</span>
         </div>
         {showCopy && (
           <button
@@ -88,7 +88,7 @@ export default function CodeBlock({
           {code.split("\n").map((line, i) => {
             const isComment = line.trim().startsWith("#");
             return (
-              <span key={i} className={isComment ? "text-[#444466]" : "text-[#f0f0ff]"}>
+              <span key={i} className={isComment ? "text-[#8080b0]" : "text-[#f0f0ff]"}>
                 {line}
                 {"\n"}
               </span>
