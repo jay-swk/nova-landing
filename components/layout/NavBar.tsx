@@ -71,7 +71,7 @@ export default function NavBar() {
           </div>
           <span className="font-bold text-[#f0f0ff] tracking-tight">Nova</span>
           <span className="hidden sm:inline text-xs text-[#8888aa] font-mono bg-[#111118] px-2 py-0.5 rounded-full border border-[#2a2a3a]">
-            v3.14
+            v3.14.1
           </span>
         </a>
 

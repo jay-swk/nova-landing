@@ -29,7 +29,6 @@ export default function Home() {
         <CommandsSection />
         <OrbitSection />
         <MCPSection />
-        <OrbitSection />
         <InstallSection />
         <FAQSection />
       </main>
