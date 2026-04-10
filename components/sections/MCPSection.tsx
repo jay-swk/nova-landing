@@ -29,8 +29,8 @@ const tools = [
   },
   {
     name: "get_state",
-    desc: "프로젝트 상태 조회",
-    detail: "지정 경로의 NOVA-STATE.md 읽기",
+    desc: "NOVA-STATE.md 기반 상태 조회 (advisory 포함)",
+    detail: "NOVA-STATE.md 읽기 + advisory 메시지 반환",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 20h9" />
@@ -40,8 +40,8 @@ const tools = [
   },
   {
     name: "verify",
-    desc: "검증 체크리스트",
-    detail: "Lite/Standard/Full 강도별 체크리스트",
+    desc: "코드 검증 실행",
+    detail: "Lite/Standard/Full 강도별 코드 품질 검증",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M9 11l3 3L22 4" />
@@ -51,8 +51,8 @@ const tools = [
   },
   {
     name: "orchestrate",
-    desc: "에이전트 편성 가이드",
-    detail: "복잡도별 최적 에이전트 구성 제안",
+    desc: "오케스트레이션 실행",
+    detail: "자연어 요청 → 설계→구현→검증 전체 사이클 실행",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
@@ -62,8 +62,8 @@ const tools = [
   },
   {
     name: "create_plan",
-    desc: "CPS Plan 템플릿 생성",
-    detail: "주제를 입력하면 Plan 초안 반환",
+    desc: "CPS 플랜 생성",
+    detail: "주제를 입력하면 CPS 형식 Plan 초안 반환",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -139,8 +139,8 @@ export default function MCPSection() {
               <div className="border-t border-[#2a2a3a] pt-3 space-y-1.5 text-xs">
                 <div><span className="text-[#60a5fa]">get_rules()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">Nova 규칙 전문</span></div>
                 <div><span className="text-[#60a5fa]">get_state()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">NOVA-STATE.md</span></div>
-                <div><span className="text-[#60a5fa]">verify()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">검증 체크리스트</span></div>
-                <div><span className="text-[#60a5fa]">orchestrate()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">에이전트 편성 가이드</span></div>
+                <div><span className="text-[#60a5fa]">verify()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">코드 검증 실행</span></div>
+                <div><span className="text-[#60a5fa]">orchestrate()</span> <span className="text-[#8080b0]">→</span> <span className="text-[#8888aa]">오케스트레이션 실행</span></div>
               </div>
             </div>
           </motion.div>
