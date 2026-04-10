@@ -50,7 +50,7 @@ const checkDimensions = [
   { label: "기능", desc: "요구사항과 실제 동작 일치 여부", color: "#7c3aed" },
   { label: "데이터 관통", desc: "입력→저장→표시 전 경로 완전성", color: "#2563eb" },
   { label: "설계 정합성", desc: "기존 코드/아키텍처 일관성", color: "#a855f7" },
-  { label: "크래프트", desc: "에러 핸들링, 타입 안전성", color: "#22c55e" },
+  { label: "에러 핸들링", desc: "에러 핸들링, 엣지 케이스, 타입 안전성", color: "#22c55e" },
   { label: "경계값", desc: "0, 음수, 빈 값에서 크래시 없음", color: "#eab308" },
 ];
 
