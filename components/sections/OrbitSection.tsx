@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 const agents = [
   {
     role: "Architect",
-    desc: "시스템 설계와 모듈 간 결합도 분석",
+    desc: "시스템 아키텍처 설계, 기술 선택, 확장성·유지보수성 검토",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" />
@@ -18,19 +18,18 @@ const agents = [
     color: "#7c3aed",
   },
   {
-    role: "Frontend Dev",
-    desc: "UI 구현과 상태 관리, 컴포넌트 설계",
+    role: "Senior Dev",
+    desc: "코드 품질 개선, 리팩토링, 구현 전략, 기술 부채 식별",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     ),
     color: "#2563eb",
   },
   {
     role: "QA Engineer",
-    desc: "테스트 전략 수립과 엣지 케이스 탐지",
+    desc: "테스트 전략 수립, 엣지 케이스 식별, 품질 검증",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M9 11l3 3L22 4" />
@@ -40,8 +39,8 @@ const agents = [
     color: "#22c55e",
   },
   {
-    role: "Security",
-    desc: "취약점 점검과 OWASP 기반 보안 감사",
+    role: "Security Engineer",
+    desc: "보안 취약점 점검, 위협 모델링, 인증·인가 검토",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -50,8 +49,8 @@ const agents = [
     color: "#ef4444",
   },
   {
-    role: "DevOps",
-    desc: "CI/CD 파이프라인과 배포 전략 구성",
+    role: "DevOps Engineer",
+    desc: "CI/CD 파이프라인, 인프라 설정, 배포 전략, 모니터링",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
@@ -376,7 +375,7 @@ export default function OrbitSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
                 { role: "Architect", status: "완료", color: "#22c55e", task: "DB 스키마 + API 설계" },
-                { role: "Frontend", status: "진행 중", color: "#2563eb", task: "로그인 UI 구현" },
+                { role: "Senior Dev", status: "진행 중", color: "#2563eb", task: "로그인 모듈 구현" },
                 { role: "QA", status: "대기", color: "#8888aa", task: "테스트 케이스 준비" },
               ].map((item) => (
                 <div key={item.role} className="rounded-lg border border-[#2a2a3a] bg-[#0d0d15] px-4 py-3">
