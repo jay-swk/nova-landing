@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Nova Orbit — agent worktrees (do not commit)
+.nova-worktrees/
+.claude/worktrees/
