@@ -223,7 +223,7 @@ export default function HeroSection() {
             { num: "10", label: "Auto-Apply Rules" },
             { num: "13", label: "Commands" },
             { num: "5", label: "Specialist Agents" },
-            { num: "4", label: "Verification Skills" },
+            { num: "5", label: "Verification Skills" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl font-bold gradient-text">{stat.num}</div>
