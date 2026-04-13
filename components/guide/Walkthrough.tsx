@@ -96,19 +96,98 @@ function StepBubble({ step, isActive }: { step: Step; isActive: boolean }) {
   );
 }
 
+function InstallInline() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="mt-6 rounded-2xl border border-[#7c3aed]/30 bg-[#111118] overflow-hidden"
+    >
+      <div className="px-5 py-4 border-b border-[#2a2a3a] flex items-center gap-2">
+        <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#2563eb] flex items-center justify-center text-white text-xs font-bold">
+          N
+        </div>
+        <span className="text-sm font-semibold text-[#f0f0ff]">
+          Nova 설치하기
+        </span>
+        <span className="text-xs text-[#22c55e] font-mono ml-auto">30초</span>
+      </div>
+      <div className="p-5 font-mono text-sm leading-8">
+        <div className="text-[#8080b0]"># 1. 설치</div>
+        <div className="text-[#f0f0ff]">
+          <span className="text-[#7c3aed]">$</span> claude plugin marketplace
+          add TeamSPWK/nova
+        </div>
+        <div className="text-[#f0f0ff]">
+          <span className="text-[#7c3aed]">$</span> claude plugin install
+          nova@nova-marketplace
+        </div>
+        <div className="text-[#8080b0] mt-2"># 2. 바로 시작</div>
+        <div className="text-[#f0f0ff]">
+          <span className="text-[#7c3aed]">$</span> 자연어로 원하는 것을 말하세요
+        </div>
+        <div className="text-[#22c55e] mt-1">
+          ✓ Nova가 자동으로 품질을 관리합니다
+        </div>
+      </div>
+      <div className="px-5 py-3 bg-[#0d0d15] border-t border-[#2a2a3a] flex items-center justify-between">
+        <span className="text-xs text-[#8888aa]">
+          MIT 오픈소스 · API 키 불필요
+        </span>
+        <a
+          href="https://github.com/TeamSPWK/nova"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-[#a855f7] hover:text-[#7c3aed] transition-colors flex items-center gap-1"
+        >
+          GitHub
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+          </svg>
+        </a>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Walkthrough({ scenario }: { scenario: Scenario }) {
   const [currentStep, setCurrentStep] = useState(0);
+  const [showInstall, setShowInstall] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const installRef = useRef<HTMLDivElement>(null);
   const visibleSteps = scenario.steps.slice(0, currentStep + 1);
   const isLast = currentStep >= scenario.steps.length - 1;
   const isFirst = currentStep === 0;
 
+  // 시나리오 변경 시 리셋
   useEffect(() => {
-    // 스텝 변경 시 채팅 영역 하단으로 스크롤
+    setCurrentStep(0);
+    setShowInstall(false);
+  }, [scenario.level]);
+
+  // 스텝 변경 시 채팅 영역 하단으로 스크롤
+  useEffect(() => {
     setTimeout(() => {
       chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, 100);
   }, [currentStep]);
+
+  // 설치 패널 열릴 때 스크롤
+  useEffect(() => {
+    if (showInstall) {
+      setTimeout(() => {
+        installRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 150);
+    }
+  }, [showInstall]);
 
   return (
     <div>
@@ -191,12 +270,12 @@ export default function Walkthrough({ scenario }: { scenario: Scenario }) {
           </div>
 
           {isLast ? (
-            <a
-              href="/nova-landing/#install"
+            <button
+              onClick={() => setShowInstall(true)}
               className="px-4 py-1.5 rounded-lg text-sm font-medium bg-gradient-to-r from-[#7c3aed] to-[#6d28d9] text-white hover:opacity-90 transition-opacity"
             >
               설치하기 &rarr;
-            </a>
+            </button>
           ) : (
             <button
               onClick={() =>
@@ -209,6 +288,13 @@ export default function Walkthrough({ scenario }: { scenario: Scenario }) {
           )}
         </div>
       </div>
+
+      {/* Inline install */}
+      {showInstall && (
+        <div ref={installRef}>
+          <InstallInline />
+        </div>
+      )}
     </div>
   );
 }
