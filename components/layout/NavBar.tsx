@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Install", href: "#install" },
 ];
 
-export default function NavBar() {
+export default function NavBar({ version }: { version?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const prefersReducedMotion = useReducedMotion();
@@ -71,7 +71,7 @@ export default function NavBar() {
           </div>
           <span className="font-bold text-[#f0f0ff] tracking-tight">Nova</span>
           <span className="hidden sm:inline text-xs text-[#8888aa] font-mono bg-[#111118] px-2 py-0.5 rounded-full border border-[#2a2a3a]">
-            v3.14.1
+            v{version ?? "4.4.0"}
           </span>
         </a>
 

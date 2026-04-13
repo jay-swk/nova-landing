@@ -11,22 +11,25 @@ import OrbitSection from "@/components/sections/OrbitSection";
 import MCPSection from "@/components/sections/MCPSection";
 import InstallSection from "@/components/sections/InstallSection";
 import FAQSection from "@/components/sections/FAQSection";
+import { getNovaMeta } from "./lib/nova-meta";
 
-export default function Home() {
+export default async function Home() {
+  const meta = await getNovaMeta();
+
   return (
     <>
       <a href="#main-content" className="skip-to-content">
         본문으로 건너뛰기
       </a>
-      <NavBar />
+      <NavBar version={meta.version} />
       <main id="main-content">
-        <HeroSection />
+        <HeroSection stats={meta.stats} />
         <ProblemSection />
         <HowItWorksSection />
         <FeaturesSection />
         <CatchesSection />
         <DemoSection />
-        <CommandsSection />
+        <CommandsSection commands={meta.commands} />
         <OrbitSection />
         <MCPSection />
         <InstallSection />

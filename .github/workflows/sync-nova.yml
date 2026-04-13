@@ -1,0 +1,38 @@
+name: Sync Nova Metadata
+
+on:
+  repository_dispatch:
+    types: [nova-release]
+  workflow_dispatch:
+    inputs:
+      meta_url:
+        description: 'Nova meta JSON URL'
+        default: 'https://raw.githubusercontent.com/TeamSPWK/nova/main/docs/nova-meta.json'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch nova-meta.json
+        run: |
+          META_URL="${{ github.event.client_payload.meta_url || inputs.meta_url || 'https://raw.githubusercontent.com/TeamSPWK/nova/main/docs/nova-meta.json' }}"
+          curl -fsSL "$META_URL" -o public/nova-meta.json
+          echo "Fetched nova-meta.json:"
+          cat public/nova-meta.json | python3 -m json.tool
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/nova-meta.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            VERSION=$(python3 -c "import json; print(json.load(open('public/nova-meta.json'))['version'])")
+            git commit -m "chore: sync nova-meta.json v${VERSION}"
+            git push
+          fi

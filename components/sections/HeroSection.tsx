@@ -8,12 +8,12 @@ const PARTICLES = [
   "/nova:plan login-api",
   "Hard-Block: jwt_secret hardcoded",
   "PASS ✓ 5/5 dimensions",
-  "/nova:gap design.md src/",
+  "/nova:orchestrate feature",
   "Evaluator: adversarial stance",
   "Generator → Nova → Done",
   "/nova:auto feature",
   "Sprint 1 PASS",
-  "/nova:xv architecture",
+  "/nova:consult architecture",
   "Data flow: complete",
   "Boundary values: OK",
   "/nova:next",
@@ -119,7 +119,15 @@ function ParticleField() {
   );
 }
 
-export default function HeroSection() {
+interface HeroStats {
+  commands: number;
+  skills: number;
+  agents: number;
+  rules: number;
+}
+
+export default function HeroSection({ stats }: { stats?: HeroStats }) {
+  const s = stats ?? { commands: 12, skills: 7, agents: 5, rules: 10 };
   return (
     <section
       id="hero"
@@ -139,7 +147,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#3a3a5a] bg-[#111118]/80 text-xs text-[#8888aa] mb-8 font-mono backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse-glow" />
-          Claude Code Plugin — v3.14.1
+          Claude Code Plugin
         </motion.div>
 
         <motion.h1
@@ -220,10 +228,10 @@ export default function HeroSection() {
           className="flex items-center justify-center gap-8 mb-10"
         >
           {[
-            { num: "10", label: "Auto-Apply Rules" },
-            { num: "13", label: "Commands" },
-            { num: "5", label: "Specialist Agents" },
-            { num: "5", label: "Verification Skills" },
+            { num: String(s.rules), label: "Auto-Apply Rules" },
+            { num: String(s.commands), label: "Commands" },
+            { num: String(s.agents), label: "Specialist Agents" },
+            { num: String(s.skills), label: "Skills" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl font-bold gradient-text">{stat.num}</div>
