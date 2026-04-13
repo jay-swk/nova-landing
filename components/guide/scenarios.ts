@@ -26,17 +26,18 @@ export const scenarios: Scenario[] = [
     badge: "Beginner",
     badgeColor: "#22c55e",
     description:
-      "Nova를 설치하고, 자연어로 요청하면 끝. 커맨드를 외울 필요 없이 Nova가 백그라운드에서 자동으로 품질을 관리합니다.",
+      "기존 Express 프로젝트에 Todo 기능을 추가합니다. Nova를 설치하고 자연어로 요청하면 끝. 커맨드를 외울 필요 없이 Nova가 백그라운드에서 자동으로 품질을 관리합니다.",
     timeEstimate: "5분",
     steps: [
       {
         type: "user",
-        content: "Todo CRUD API 만들어줘. Express + TypeScript로.",
+        content: "이 프로젝트에 Todo CRUD API를 추가해줘.",
       },
       {
         type: "nova",
-        content: "복잡도 판단: 간단 (2파일) → 바로 구현 시작",
-        detail: "Nova가 자동으로 파일 수를 분석하고, 간단한 작업이라 Plan 없이 바로 구현합니다.",
+        content: "복잡도 판단: 간단 (2파일 변경) → 바로 구현 시작",
+        detail:
+          "Nova가 기존 프로젝트 구조를 분석하고, 라우트 1개 + 모델 1개만 추가하면 되는 간단한 작업이라 Plan 없이 바로 구현합니다.",
         status: "working",
       },
       {
@@ -54,7 +55,8 @@ export const scenarios: Scenario[] = [
       {
         type: "result",
         content: "PASS — 커밋 가능",
-        detail: "경계값 테스트 추가를 권장합니다 (Info)",
+        detail:
+          "변경 코드에 대한 테스트가 없습니다. 테스트 추가를 권장합니다. (Warning)",
         status: "pass",
       },
       {
@@ -63,7 +65,8 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "커밋 완료. 자연어로 요청했을 뿐인데, Nova가 자동으로 검증까지 마쳤습니다.",
+        content:
+          "커밋 완료. 자연어로 요청했을 뿐인데, Nova가 자동으로 검증까지 마쳤습니다.",
         status: "pass",
       },
     ],
@@ -72,11 +75,11 @@ export const scenarios: Scenario[] = [
     level: 2,
     title: "JWT 인증 추가",
     subtitle: "Nova가 보안 버그를 잡는 순간",
-    complexity: "보통 (5파일)",
+    complexity: "보통 → 고위험 상향 (5파일)",
     badge: "Intermediate",
     badgeColor: "#eab308",
     description:
-      "파일이 3개 이상이면 Nova가 자동으로 Plan을 먼저 작성합니다. 그리고 독립 검증에서 보안 취약점을 잡아냅니다.",
+      "파일이 3개 이상이면 Nova가 자동으로 Plan을 먼저 작성합니다. 인증은 '고위험 영역'이라 검증 강도가 한 단계 상향됩니다.",
     timeEstimate: "15분",
     steps: [
       {
@@ -85,15 +88,17 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "복잡도 판단: 보통 (5파일) → Plan 먼저 작성합니다",
+        content:
+          "복잡도 판단: 보통 (5파일) + 인증 = 고위험 → 한 단계 상향 적용",
         detail:
-          "3파일 이상 변경이 예상되면 Nova가 자동으로 CPS Plan을 작성합니다. 커맨드(/nova:plan)를 직접 호출할 필요 없습니다.",
+          "인증/DB/결제 영역은 파일 수와 무관하게 자동으로 한 단계 상향됩니다. 5파일이지만 고위험이라 더 엄격한 검증이 적용됩니다.",
         status: "working",
       },
       {
         type: "nova",
-        content:
-          "Plan 작성 완료 — 회원가입, 로그인, 미들웨어, 토큰 갱신 4개 기능 정의",
+        content: "Plan 작성 완료 — 회원가입, 로그인, 미들웨어, 토큰 갱신 정의",
+        detail:
+          "3파일 이상 + 고위험 상향이므로 Plan을 먼저 작성합니다. 커맨드를 직접 호출할 필요 없습니다.",
         status: "info",
       },
       {
@@ -109,23 +114,28 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "Evaluator Standard 실행 중... (3단계 검증)",
+        content: "Evaluator 실행 중... (고위험 상향 → 3단계 풀 검증)",
         detail:
-          "Layer 1: 정적 분석 → Layer 2: 의미론 분석 → Layer 3: 실행 검증",
+          "Layer 1: 정적 분석 → Layer 2: 의미론 분석 → Layer 3: 실행 검증\n인증 영역이라 기본보다 엄격한 검증이 적용됩니다.",
         status: "working",
       },
       {
         type: "result",
-        content: "FAIL — Critical 2건 발견",
+        content: "FAIL — Hard-Block 2건 (즉시 중단)",
         detail:
-          '❌ jwt_secret이 코드에 하드코딩 ("mysecret123")\n❌ 비밀번호를 bcrypt 없이 평문 저장',
+          '🚨 Hard-Block: jwt_secret이 코드에 하드코딩 ("mysecret123")\n🚨 Hard-Block: 비밀번호를 bcrypt 없이 평문 저장\n\n보안 취약점은 Hard-Block으로 분류됩니다. 자동 진행이 중단되고 사용자 확인을 요청합니다.',
         status: "fail",
       },
       {
+        type: "user",
+        content: "수정해줘.",
+      },
+      {
         type: "nova",
-        content: "자동 수정 시도 → jwt_secret을 환경변수로 이동, bcrypt 해싱 추가",
+        content:
+          "사용자 승인 확인 → jwt_secret을 환경변수로 이동, bcrypt 해싱 추가",
         detail:
-          "Nova가 Critical 이슈를 자동으로 수정하고 재검증합니다. 수정은 지적된 항목만 — 다른 코드는 건드리지 않습니다.",
+          "Hard-Block은 사용자 승인 없이 자동 수정하지 않습니다. AI는 제안, 인간이 결정합니다.\n수정은 지적된 항목만 — 다른 코드는 건드리지 않습니다.",
         status: "working",
       },
       {
@@ -145,7 +155,7 @@ export const scenarios: Scenario[] = [
     badge: "Advanced",
     badgeColor: "#a855f7",
     description:
-      "8파일 이상이면 Nova가 스프린트로 분할하고, 전문 에이전트(Architect, Dev, QA, Security)를 편성합니다.",
+      "8파일 이상이면 Nova가 스프린트로 분할합니다. 결제는 고위험 영역이라 설계부터 검증까지 전 과정에 더 엄격한 기준이 적용됩니다.",
     timeEstimate: "1시간",
     steps: [
       {
@@ -154,16 +164,17 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "복잡도 판단: 복잡 (12파일) → Plan → Design → 스프린트 분할",
+        content:
+          "복잡도 판단: 복잡 (12파일) + 결제 = 고위험 → Plan → Design → 스프린트 분할",
         detail:
           "결제는 '고위험 영역'이라 파일 수와 무관하게 한 단계 상향합니다. 자연어 요청 하나로 전체 설계가 시작됩니다.",
         status: "working",
       },
       {
         type: "nova",
-        content: "Architect 에이전트 투입 → CPS Design 작성 완료",
+        content: "설계 완료 → 3개 스프린트로 분할",
         detail:
-          "Sprint 1: DB 스키마 + 모델 (3파일)\nSprint 2: API 엔드포인트 (5파일)\nSprint 3: 웹훅 + 프론트엔드 (4파일)",
+          "Sprint 1: DB 스키마 + 모델 (3파일)\nSprint 2: API 엔드포인트 (5파일)\nSprint 3: 웹훅 + 프론트엔드 (4파일)\n\n각 스프린트마다 독립 검증을 수행합니다.",
         status: "info",
       },
       {
@@ -172,8 +183,9 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "Sprint 1 실행 — Dev 에이전트 구현 → QA 에이전트 검증",
-        detail: "각 스프린트마다 구현과 검증을 독립 에이전트가 분리 수행합니다.",
+        content: "Sprint 1 실행 — 구현 → 독립 검증",
+        detail:
+          "각 스프린트마다 구현과 검증을 독립 에이전트가 분리 수행합니다.",
         status: "working",
       },
       {
@@ -183,22 +195,26 @@ export const scenarios: Scenario[] = [
       },
       {
         type: "nova",
-        content: "Sprint 2 실행 — Dev 구현 → QA + Security 에이전트 검증",
+        content: "Sprint 2 실행 — 구현 → 독립 검증 (결제 API 보안 집중)",
         detail:
-          "결제 API는 Security 에이전트가 추가 투입되어 금액 조작, 결제 상태 위변조를 집중 점검합니다.",
+          "결제 API는 보안 관점이 추가로 적용되어 금액 조작, 결제 상태 위변조를 집중 점검합니다.",
         status: "working",
       },
       {
         type: "result",
-        content: "Sprint 2 CONDITIONAL — 웹훅 서명 검증 누락 (Warning)",
+        content: "Sprint 2 FAIL — Hard-Block 1건 (즉시 중단)",
         detail:
-          "Stripe 웹훅의 서명 검증이 없으면 외부에서 가짜 이벤트를 보낼 수 있습니다.",
+          "🚨 Hard-Block: Stripe 웹훅 서명 검증 누락\n외부에서 가짜 결제 이벤트를 주입할 수 있는 보안 취약점입니다.\n\n사용자 확인을 요청합니다.",
         status: "fail",
+      },
+      {
+        type: "user",
+        content: "수정 진행해.",
       },
       {
         type: "nova",
         content:
-          "수정 → stripe.webhooks.constructEvent() 서명 검증 추가 → 재검증 PASS",
+          "사용자 승인 확인 → stripe.webhooks.constructEvent() 서명 검증 추가 → 재검증 PASS",
         status: "pass",
       },
       {
@@ -210,7 +226,7 @@ export const scenarios: Scenario[] = [
         type: "result",
         content: "전체 PASS — 3 스프린트 완료, 커밋 가능",
         detail:
-          "Architect 1 + Dev 3 + QA 3 + Security 1 = 8개 전문 에이전트가 협업했습니다.\n자연어 한 줄로 시작해서, 구조화된 검증까지 자동으로.",
+          "자연어 한 줄로 시작해서, 설계 → 스프린트 분할 → 독립 검증 → 보안 Hard-Block 차단까지 자동으로.\n결제 같은 고위험 영역도 Nova가 구조적으로 관리합니다.",
         status: "pass",
       },
     ],
