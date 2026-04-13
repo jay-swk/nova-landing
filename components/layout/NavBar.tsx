@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Orbit", href: "#orbit" },
   { label: "MCP", href: "#mcp" },
   { label: "Install", href: "#install" },
+  { label: "Guide", href: "/nova-landing/guide" },
 ];
 
 export default function NavBar({ version }: { version?: string }) {

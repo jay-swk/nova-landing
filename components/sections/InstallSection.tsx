@@ -147,7 +147,7 @@ export default function InstallSection() {
             </li>
             <li className="flex items-center gap-2">
               <span className="text-[#eab308]">○</span>
-              OpenAI + Google AI Studio API 키 (선택, <code className="font-mono text-xs bg-[#1a1a24] px-1 rounded">/nova:xv</code> 사용 시만 필요)
+              OpenAI + Google AI Studio API 키 (선택, <code className="font-mono text-xs bg-[#1a1a24] px-1 rounded">/nova:consult</code> 사용 시만 필요)
             </li>
           </ul>
         </motion.div>
@@ -170,6 +170,15 @@ export default function InstallSection() {
             GitHub에서 시작하기
           </a>
           <p className="mt-3 text-xs text-[#8888aa]">MIT 오픈소스 · 무료</p>
+          <a
+            href="/nova-landing/guide"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#a855f7] hover:text-[#7c3aed] transition-colors"
+          >
+            처음이신가요? 인터랙티브 가이드로 체험해보세요
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>
