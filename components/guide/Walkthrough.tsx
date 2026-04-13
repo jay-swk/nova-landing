@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { Scenario, Step } from "./scenarios";
 
@@ -98,9 +98,17 @@ function StepBubble({ step, isActive }: { step: Step; isActive: boolean }) {
 
 export default function Walkthrough({ scenario }: { scenario: Scenario }) {
   const [currentStep, setCurrentStep] = useState(0);
+  const chatEndRef = useRef<HTMLDivElement>(null);
   const visibleSteps = scenario.steps.slice(0, currentStep + 1);
   const isLast = currentStep >= scenario.steps.length - 1;
   const isFirst = currentStep === 0;
+
+  useEffect(() => {
+    // 스텝 변경 시 채팅 영역 하단으로 스크롤
+    setTimeout(() => {
+      chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 100);
+  }, [currentStep]);
 
   return (
     <div>
@@ -156,6 +164,7 @@ export default function Walkthrough({ scenario }: { scenario: Scenario }) {
               />
             ))}
           </AnimatePresence>
+          <div ref={chatEndRef} />
         </div>
 
         {/* Controls */}
