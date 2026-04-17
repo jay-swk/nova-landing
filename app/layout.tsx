@@ -16,18 +16,26 @@ const geistMono = Geist_Mono({
 const SITE_URL = "https://jay-swk.github.io/nova-landing";
 
 export const metadata: Metadata = {
-  title: "Nova — Verify Before You Ship. Every Time.",
+  title: "Nova — AI Agent Ops Framework for Claude Code",
   description:
-    "Nova is a Claude Code plugin that acts as a Quality Gate for AI-assisted development. Independent evaluation, multi-AI cross-verification, and design-implementation gap detection.",
-  keywords: ["Nova", "Claude Code", "AI", "Quality Gate", "code review", "verification"],
+    "Nova is a Claude Code plugin that makes AI agents operate reliably. Five pillars — environment, context, quality, collaboration, evolution — with a Quality Gate at the core: Generator-Evaluator separation, independent evaluation, design-implementation gap detection.",
+  keywords: [
+    "Nova",
+    "Claude Code",
+    "AI agent ops",
+    "agent framework",
+    "Quality Gate",
+    "code review",
+    "verification",
+  ],
   metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Nova — Verify Before You Ship. Every Time.",
+    title: "Nova — AI Agent Ops Framework for Claude Code",
     description:
-      "AI가 만든 코드의 진짜 병목을 잡는 Quality Gate. Generator-Evaluator 분리, 5차원 검증, Hard-Block 자동 분류.",
+      "에이전트가 안정적으로 일하도록 만드는 Agent Ops 프레임워크. 환경·맥락·품질·협업·진화 5기둥, 품질 게이트는 핵심 기둥.",
     type: "website",
     url: SITE_URL,
     siteName: "Nova",
@@ -35,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nova — Verify Before You Ship. Every Time.",
+    title: "Nova — AI Agent Ops Framework for Claude Code",
     description:
-      "AI가 만든 코드의 진짜 병목을 잡는 Quality Gate. Generator-Evaluator 분리, 5차원 검증, Hard-Block 자동 분류.",
+      "에이전트가 안정적으로 일하도록 만드는 Agent Ops 프레임워크. 환경·맥락·품질·협업·진화 5기둥, 품질 게이트는 핵심 기둥.",
   },
   icons: {
     icon: [
@@ -72,7 +80,7 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "Nova",
               description:
-                "A Claude Code plugin that acts as a Quality Gate for AI-assisted development.",
+                "A Claude Code plugin providing an AI Agent Ops framework (environment, context, quality, collaboration, evolution) with a Quality Gate at its core.",
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Cross-platform",
               url: SITE_URL,

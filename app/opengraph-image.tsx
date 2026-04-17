@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Nova — AI 코드 품질 게이트";
+export const alt = "Nova — AI Agent Ops Framework for Claude Code";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -102,13 +102,13 @@ export default function OgImage() {
           style={{
             fontSize: 20,
             color: "rgba(240, 240, 255, 0.6)",
-            maxWidth: 700,
+            maxWidth: 780,
             textAlign: "center",
             lineHeight: 1.5,
             display: "flex",
           }}
         >
-          AI-assisted development Quality Gate for Claude Code
+          AI Agent Ops for Claude Code · Environment · Context · Quality · Collaboration · Evolution
         </div>
 
         {/* Bottom badge */}

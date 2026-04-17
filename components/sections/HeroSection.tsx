@@ -147,7 +147,7 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#3a3a5a] bg-[#111118]/80 text-xs text-[#8888aa] mb-8 font-mono backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse-glow" />
-          Claude Code Plugin
+          AI Agent Ops Framework · Claude Code Plugin
         </motion.div>
 
         <motion.h1
@@ -180,11 +180,11 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="text-base text-[#8888aa] max-w-xl mx-auto mb-10 leading-relaxed text-balance"
         >
-          Nova는 AI 오케스트레이터 루프 안의{" "}
-          <span className="text-[#a855f7]">Quality Gate</span>다.{" "}
+          Nova는 AI 에이전트가 안정적으로 일하도록 만드는{" "}
+          <span className="text-[#a855f7]">Agent Ops 프레임워크</span>다.{" "}
           <br className="hidden sm:inline" />
-          코드를 생성하지 않고, 생성된 코드가 제대로 됐는지{" "}
-          <span className="text-[#a855f7]">독립 검증</span>한다.
+          환경·맥락·품질·협업·진화 5기둥 중 가장 강한 기둥이{" "}
+          <span className="text-[#a855f7]">독립 검증 품질 게이트</span>다.
         </motion.p>
 
         <motion.div
@@ -267,7 +267,7 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
               <span className="text-[#7c3aed]">$</span> /nova:next
             </div>
             <div className="text-[#22c55e] mt-1">
-              ✓ Nova Quality Gate active — every session, automatically
+              ✓ Nova Agent Ops active — every session, automatically
             </div>
           </div>
         </motion.div>
