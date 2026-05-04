@@ -6,22 +6,22 @@ import { motion } from "motion/react";
 const PARTICLES = [
   "/nova:review src/auth/",
   "/nova:plan login-api",
-  "Hard-Block: jwt_secret hardcoded",
-  "PASS ✓ 5/5 dimensions",
-  "/nova:orchestrate feature",
-  "Evaluator: adversarial stance",
-  "Generator → Nova → Done",
+  "repo-preflight: rules loaded",
+  "PASS: 5/5 dimensions",
+  "/nova:run feature",
+  "Evaluator: independent stance",
+  "Agent Ops: context retained",
   "/nova:auto feature",
-  "Sprint 1 PASS",
-  "/nova:consult architecture",
-  "Data flow: complete",
-  "Boundary values: OK",
+  "/nova:ask architecture",
+  "/nova:claude-md --project",
+  "NOVA-STATE.md updated",
+  "Worktree secrets linked",
   "/nova:next",
   "tsc: 0 errors",
   "Security: no hardcoded secrets",
-  "/nova:verify --strict",
+  "/nova:check --pre-commit",
   "Known Gaps: documented",
-  "Complexity: Medium → Plan",
+  "Clean clone: reproducible",
 ];
 
 function ParticleField() {
@@ -131,7 +131,7 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-[84svh] flex flex-col items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-[#0a0a0f]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,58,237,0.12),transparent)]" />
@@ -139,7 +139,7 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
 
       <ParticleField />
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-24 pb-16">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-24 pb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -156,11 +156,11 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight mb-6"
         >
-          <span className="text-[#f0f0ff]">Verify Before</span>
+          <span className="text-[#f0f0ff]">Nova</span>
           <br />
-          <span className="gradient-text glow-text">You Ship.</span>
+          <span className="gradient-text glow-text">AI Agent Ops</span>
           <br />
-          <span className="text-[#f0f0ff]">Every Time.</span>
+          <span className="text-[#f0f0ff]">Framework</span>
         </motion.h1>
 
         <motion.p
@@ -169,9 +169,9 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="text-lg sm:text-xl text-[#8888aa] max-w-2xl mx-auto mb-4 leading-relaxed text-balance"
         >
-          AI가 코드를 빠르게 만들어줘도,{" "}
+          AI 코딩 에이전트가 많아질수록,{" "}
           <br className="hidden sm:inline" />
-          잘못된 판단 하나가 4주 뒤 전체 리팩토링으로 돌아온다.
+          병목은 생성 속도가 아니라 운영 신뢰도다.
         </motion.p>
 
         <motion.p
@@ -180,18 +180,17 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="text-base text-[#8888aa] max-w-xl mx-auto mb-10 leading-relaxed text-balance"
         >
-          Nova는 AI 에이전트가 안정적으로 일하도록 만드는{" "}
-          <span className="text-[#a855f7]">Agent Ops 프레임워크</span>다.{" "}
+          Nova는 Claude Code 위에서 에이전트 작업을{" "}
+          <span className="text-[#a855f7]">환경·맥락·검증·협업·진화</span>로 운영한다.{" "}
           <br className="hidden sm:inline" />
-          환경·맥락·품질·협업·진화 5기둥 중 가장 강한 기둥이{" "}
-          <span className="text-[#a855f7]">독립 검증 품질 게이트</span>다.
+          품질 게이트는 제품의 전부가 아니라, 운영 체계 안에서 가장 강한 실행 루프다.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
           <motion.a
             href="#install"
@@ -203,21 +202,19 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12l7 7 7-7" />
             </svg>
-            설치하기 (30초)
+            운영 루프 설치하기
           </motion.a>
           <motion.a
-            href="https://github.com/TeamSPWK/nova"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#evaluation"
             whileHover={{ scale: 1.03, borderColor: "#7c3aed", backgroundColor: "#1a1a24" }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
             className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#3a3a5a] text-[#f0f0ff] font-semibold text-base"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 12h18M13 5l7 7-7 7" />
             </svg>
-            GitHub
+            도입 기준 보기
           </motion.a>
         </motion.div>
 
@@ -225,10 +222,10 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="flex items-center justify-center gap-8 mb-10"
+          className="flex items-center justify-center gap-6 sm:gap-8 mb-8"
         >
           {[
-            { num: String(s.rules), label: "Auto-Apply Rules" },
+            { num: String(s.rules), label: "Operating Rules" },
             { num: String(s.commands), label: "Commands" },
             { num: String(s.agents), label: "Specialist Agents" },
             { num: String(s.skills), label: "Skills" },
@@ -244,30 +241,15 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="max-w-lg mx-auto rounded-xl border border-[#2a2a3a] bg-[#0d0d15]/80 backdrop-blur-sm overflow-hidden shadow-2xl shadow-black/50"
+          className="hidden sm:block max-w-2xl mx-auto rounded-xl border border-[#2a2a3a] bg-[#0d0d15]/80 backdrop-blur-sm shadow-2xl shadow-black/40"
         >
-          <div className="flex items-center gap-2 px-4 py-3 bg-[#111118] border-b border-[#2a2a3a]">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-[#ef4444]/70" />
-              <div className="w-3 h-3 rounded-full bg-[#eab308]/70" />
-              <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
-            </div>
-            <span className="ml-2 text-xs text-[#8080b0] font-mono">terminal</span>
-          </div>
-          <div className="p-4 font-mono text-sm leading-7">
-            <div className="text-[#8080b0]"># Install Nova (30 seconds)</div>
-            <div className="text-[#f0f0ff]">
-              <span className="text-[#7c3aed]">$</span> claude plugin marketplace add TeamSPWK/nova
-            </div>
-            <div className="text-[#f0f0ff]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 px-4 py-3 font-mono text-xs sm:text-sm text-left">
+            <div className="text-[#f0f0ff] min-w-0 truncate">
               <span className="text-[#7c3aed]">$</span> claude plugin install nova@nova-marketplace
             </div>
-            <div className="text-[#8080b0] mt-1"># Start immediately</div>
-            <div className="text-[#f0f0ff]">
-              <span className="text-[#7c3aed]">$</span> /nova:next
-            </div>
-            <div className="text-[#22c55e] mt-1">
-              ✓ Nova Agent Ops active — every session, automatically
+            <div className="hidden sm:block h-4 w-px bg-[#2a2a3a]" />
+            <div className="text-[#22c55e] whitespace-normal sm:whitespace-nowrap">
+              ✓ Agent Ops ready
             </div>
           </div>
         </motion.div>
@@ -277,7 +259,7 @@ export default function HeroSection({ stats }: { stats?: HeroStats }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2"
       >
         <a href="#problem" aria-label="아래로 스크롤" className="flex flex-col items-center gap-2 text-[#8080b0] hover:text-[#8888aa] transition-colors">
           <span className="text-xs font-mono">scroll</span>

@@ -18,15 +18,19 @@ const SITE_URL = "https://jay-swk.github.io/nova-landing";
 export const metadata: Metadata = {
   title: "Nova — AI Agent Ops Framework for Claude Code",
   description:
-    "Nova는 AI 에이전트가 안정적으로 일하도록 만드는 Claude Code 플러그인이다. 환경·맥락·품질·협업·진화 5기둥 중 핵심은 품질 게이트 — Generator-Evaluator 분리, 독립 검증, 설계-구현 갭 탐지.",
+    "Nova는 Claude Code에서 AI 에이전트의 환경, 맥락, 지침, 검증, 협업, 진화를 운영하는 Agent Ops 프레임워크다. CLAUDE.md 재구성, worktree 환경 연결, Generator-Evaluator 분리, 멀티 AI 자문을 한 실행 경로로 묶는다.",
   keywords: [
     "Nova",
     "Claude Code",
     "AI agent ops",
     "agent framework",
+    "AI Agent Ops",
+    "harness engineering",
+    "CLAUDE.md",
     "AI 에이전트",
-    "Quality Gate",
-    "품질 게이트",
+    "verification loop",
+    "Generator Evaluator",
+    "에이전트 운영",
     "code review",
     "코드 리뷰",
     "verification",
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nova — AI Agent Ops Framework for Claude Code",
     description:
-      "에이전트가 안정적으로 일하도록 만드는 Agent Ops 프레임워크. 환경·맥락·품질·협업·진화 5기둥, 품질 게이트는 핵심 기둥.",
+      "Claude Code 에이전트 작업을 환경·맥락·지침·검증·협업·진화로 운영하는 Agent Ops 프레임워크.",
     type: "website",
     url: SITE_URL,
     siteName: "Nova",
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nova — AI Agent Ops Framework for Claude Code",
     description:
-      "에이전트가 안정적으로 일하도록 만드는 Agent Ops 프레임워크. 환경·맥락·품질·협업·진화 5기둥, 품질 게이트는 핵심 기둥.",
+      "Claude Code 에이전트 작업을 환경·맥락·지침·검증·협업·진화로 운영하는 Agent Ops 프레임워크.",
   },
   icons: {
     icon: [
@@ -83,7 +87,7 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "Nova",
               description:
-                "Nova는 AI 에이전트가 안정적으로 일하도록 만드는 Claude Code 플러그인이다. 환경·맥락·품질·협업·진화 5기둥, 품질 게이트가 핵심이다.",
+                "Nova는 Claude Code에서 AI 에이전트의 환경, 맥락, 지침, 검증, 협업, 진화를 운영하는 Agent Ops 프레임워크다.",
               inLanguage: "ko",
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Cross-platform",

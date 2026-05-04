@@ -11,9 +11,9 @@ const problems = [
         <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
       </svg>
     ),
-    tag: "설계 병목",
-    title: "1주차 잘못된 판단이 4주를 날린다",
-    body: "AI가 코드를 빠르게 생성해도, 아키텍처 결정 하나가 잘못되면 스노우볼처럼 불어난다. 스택 트레이스가 원인을 가리키지 않을 때 팀 전체가 멈춘다.",
+    tag: "운영 공백",
+    title: "코드는 늘었지만 통제면은 비어 있다",
+    body: "AI가 빠르게 구현해도, 어떤 규칙으로 일하고 어떤 상태를 기억하며 어디까지 검증했는지 남지 않으면 프로젝트는 더 빨리 복잡해진다.",
     accent: "#ef4444",
   },
   {
@@ -23,9 +23,9 @@ const problems = [
         <path d="M12 8v4M12 16h.01" />
       </svg>
     ),
-    tag: "자기 검증의 함정",
-    title: '"자기가 쓴 코드를 자기가 리뷰"',
-    body: "같은 AI가 코드를 만들고 리뷰한다. 확증 편향. jwt_secret을 하드코딩해놓고 리뷰에서 통과시킨다. 설계에서 명시한 bcrypt 해싱이 구현에 없어도 모른다.",
+    tag: "지침 드리프트",
+    title: "CLAUDE.md 하나에 모든 것을 넣으면 다시 흩어진다",
+    body: "프로젝트 개요, 배포 주의, 인프라 참조, 시크릿 관리, 작업 규칙이 한 파일에 쌓이면 에이전트도 우선순위를 잃는다. 중요한 지침 표면을 작게 유지해야 한다.",
     accent: "#eab308",
   },
   {
@@ -34,9 +34,9 @@ const problems = [
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
       </svg>
     ),
-    tag: "맥락 소실",
-    title: "세션이 끊기면 맥락이 사라진다",
-    body: "AI 대화는 세션 단위다. 어제 설계한 결정, 발견한 Known Gaps, 완료한 스프린트 — 새 세션이 열리면 모두 초기화. 같은 실수를 반복하는 이유다.",
+    tag: "검증 착시",
+    title: "자기가 만든 코드를 자기가 통과시킨다",
+    body: "같은 에이전트가 구현과 리뷰를 모두 맡으면 확증 편향이 생긴다. 설계-구현 갭, 하드코딩된 시크릿, 경계값 누락은 독립 관점에서 봐야 드러난다.",
     accent: "#7c3aed",
   },
 ];
@@ -46,7 +46,7 @@ export default function ProblemSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="problem" className="py-24 px-4 sm:px-6 bg-[#0a0a0f]">
+    <section id="problem" className="py-24 px-4 sm:px-6 bg-[#0a0a0f] border-t border-[#2a2a3a]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -59,11 +59,10 @@ export default function ProblemSection() {
             The Real Problem
           </div>
           <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#f0f0ff] mb-4">
-            AI가 만든 코드의 진짜 병목
+            AI 코딩의 진짜 병목은 운영이다
           </h2>
           <p className="text-[#8888aa] max-w-2xl mx-auto text-lg">
-            타이핑 속도가 병목이 아니다. 잘못된 판단의{" "}
-            <span className="text-[#f0f0ff]">복리 이자</span>가 병목이다.
+            생성 속도가 빨라질수록 지침, 맥락, 검증, 배포 주의가 흩어지는 비용이 커진다.
           </p>
         </motion.div>
 

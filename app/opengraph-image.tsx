@@ -76,7 +76,7 @@ export default function OgImage() {
               fontSize: 56,
               fontWeight: 800,
               color: "white",
-              letterSpacing: "-0.02em",
+              letterSpacing: "0",
               display: "flex",
             }}
           >
@@ -94,7 +94,7 @@ export default function OgImage() {
             display: "flex",
           }}
         >
-          Verify Before You Ship. Every Time.
+          AI Agent Ops Framework
         </div>
 
         {/* Description */}
@@ -108,7 +108,7 @@ export default function OgImage() {
             display: "flex",
           }}
         >
-          AI Agent Ops for Claude Code · Environment · Context · Quality · Collaboration · Evolution
+          Claude Code operations for context, instructions, verification, collaboration, and evolution
         </div>
 
         {/* Bottom badge */}

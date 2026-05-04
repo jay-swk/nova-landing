@@ -2,6 +2,7 @@ import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
+import EvaluationSection from "@/components/sections/EvaluationSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import CatchesSection from "@/components/sections/CatchesSection";
@@ -25,6 +26,7 @@ export default async function Home() {
       <main id="main-content">
         <HeroSection stats={meta.stats} />
         <ProblemSection />
+        <EvaluationSection stats={meta.stats} />
         <HowItWorksSection />
         <FeaturesSection />
         <CatchesSection />

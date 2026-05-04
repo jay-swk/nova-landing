@@ -128,7 +128,7 @@ function InstallInline() {
           <span className="text-[#7c3aed]">$</span> 자연어로 원하는 것을 말하세요
         </div>
         <div className="text-[#22c55e] mt-1">
-          ✓ Nova가 자동으로 품질을 관리합니다
+          ✓ Nova가 맥락과 검증 루프를 관리합니다
         </div>
       </div>
       <div className="px-5 py-3 bg-[#0d0d15] border-t border-[#2a2a3a] flex items-center justify-between">
@@ -169,8 +169,11 @@ export default function Walkthrough({ scenario }: { scenario: Scenario }) {
 
   // 시나리오 변경 시 리셋
   useEffect(() => {
-    setCurrentStep(0);
-    setShowInstall(false);
+    const reset = window.setTimeout(() => {
+      setCurrentStep(0);
+      setShowInstall(false);
+    }, 0);
+    return () => window.clearTimeout(reset);
   }, [scenario.level]);
 
   // 스텝 변경 시 채팅 영역 하단으로 스크롤

@@ -9,31 +9,36 @@ interface Command {
 }
 
 const categoryMap: Record<string, string> = {
+  "/nova:ask": "Advise",
+  "/nova:audit-self": "Verify",
   "/nova:plan": "Plan",
   "/nova:design": "Plan",
-  "/nova:init": "Plan",
+  "/nova:deepplan": "Plan",
   "/nova:review": "Verify",
-  "/nova:verify": "Verify",
+  "/nova:check": "Verify",
   "/nova:ux-audit": "Verify",
-  "/nova:auto": "Automate",
-  "/nova:orchestrate": "Automate",
-  "/nova:evolve": "Automate",
-  "/nova:next": "Analyze",
-  "/nova:explore": "Analyze",
-  "/nova:consult": "Analyze",
+  "/nova:auto": "Operate",
+  "/nova:run": "Operate",
+  "/nova:evolve": "Operate",
+  "/nova:worktree-setup": "Operate",
+  "/nova:next": "Context",
+  "/nova:scan": "Context",
+  "/nova:setup": "Context",
+  "/nova:claude-md": "Context",
 };
 
 const categoryColors: Record<string, string> = {
   Plan: "#2563eb",
   Verify: "#22c55e",
-  Automate: "#a855f7",
-  Analyze: "#eab308",
+  Operate: "#a855f7",
+  Context: "#eab308",
+  Advise: "#0ea5e9",
 };
 
-const categories = ["All", "Plan", "Verify", "Automate", "Analyze"];
+const categories = ["All", "Plan", "Verify", "Operate", "Context", "Advise"];
 
 function getCategory(cmd: string): string {
-  return categoryMap[cmd] ?? "Analyze";
+  return categoryMap[cmd] ?? "Context";
 }
 
 export default function CommandsSection({ commands }: { commands: Command[] }) {
@@ -68,7 +73,7 @@ export default function CommandsSection({ commands }: { commands: Command[] }) {
             필요할 때 직접 제어
           </h2>
           <p className="text-[#8888aa] max-w-xl mx-auto">
-            자동 적용 규칙 위에 추가 제어가 필요할 때 사용하는 {commands.length}개 커맨드.
+            에이전트 운영 루프를 직접 제어할 때 사용하는 {commands.length}개 커맨드.
           </p>
         </motion.div>
 

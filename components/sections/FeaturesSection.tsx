@@ -39,9 +39,9 @@ const pillars = [
         <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
       </svg>
     ),
-    tag: "Quality · Core",
-    title: "품질 — Generator-Evaluator 분리",
-    body: "구현한 에이전트와 검증하는 에이전트는 항상 다른 서브에이전트다. 커밋 전 하드 게이트: tsc/lint 통과 → Evaluator PASS → 커밋 허용. 세션마다 자동 주입되는 유일한 전역 규칙이다.",
+    tag: "Verification · Core",
+    title: "검증 — Generator-Evaluator 분리",
+    body: "구현한 에이전트와 검증하는 에이전트를 다른 실행 주체로 분리한다. 커밋 전에는 tsc/lint 통과, Evaluator PASS, Known Gaps 기록까지 한 루프로 묶는다.",
     detail: [
       "독립 서브에이전트 검증",
       "5차원 (기능·데이터·설계·에러·경계값)",
@@ -63,7 +63,7 @@ const pillars = [
     tag: "Collaboration",
     title: "협업 — 오케스트레이션 & 자문",
     body: "설계→구현→검증 전체 사이클을 한 명령으로 조율하고, 결정이 갈리는 지점에서는 Claude·GPT·Gemini를 동시에 불러 교차 확인한다.",
-    detail: ["/nova:auto — 풀 사이클", "/nova:orchestrator — CPS 설계", "/nova:ask — 멀티 AI 자문"],
+    detail: ["/nova:auto — 풀 사이클", "/nova:run — 구현→검증", "/nova:ask — 멀티 AI 자문"],
     color: "#22c55e",
   },
   {
@@ -104,7 +104,7 @@ export default function FeaturesSection() {
           </h2>
           <p className="text-[#8888aa] max-w-2xl mx-auto text-lg">
             Nova는 품질 게이트에서 출발했지만, 이제 에이전트가 안정적으로 일하기 위한
-            환경·맥락·품질·협업·진화 전체를 다룬다. 품질 기둥은 여전히 가장 강하다.
+            환경·맥락·검증·협업·진화 전체를 다룬다. 검증 기둥은 여전히 가장 강한 증거다.
           </p>
         </motion.div>
 

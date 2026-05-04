@@ -7,26 +7,26 @@ const catches = [
   {
     defect: "GET /api/auth/me 엔드포인트 누락",
     type: "설계-구현 갭",
-    method: "/nova:gap — 설계 문서 vs 라우트 핸들러 diff",
-    icon: "📄",
+    method: "/nova:check — 설계 문서 vs 라우트 핸들러 diff",
+    icon: "DOC",
   },
   {
     defect: "비밀번호 평문 저장",
     type: "보안",
     method: "설계는 bcrypt 요구, 코드에 해싱 없음 → Hard-Block",
-    icon: "🔒",
+    icon: "SEC",
   },
   {
     defect: "이메일 중복 체크 누락 (409 미처리)",
     type: "검증 계약 불이행",
     method: "설계에 409 명시, 코드에 처리 없음",
-    icon: "⚠️",
+    icon: "API",
   },
   {
     defect: "JWT 시크릿 키 하드코딩",
     type: "보안 패턴",
     method: "정적 분석: 문자열 리터럴 탐지 → Hard-Block",
-    icon: "🔑",
+    icon: "KEY",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function CatchesSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="catches" aria-label="Nova가 잡아내는 결함" className="py-16 px-4 sm:px-6 bg-[#0d0d15]">
+    <section id="catches" aria-label="Nova 운영 루프가 잡아내는 결함" className="py-16 px-4 sm:px-6 bg-[#0d0d15]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
@@ -51,8 +51,8 @@ export default function CatchesSection() {
               </svg>
             </div>
             <div>
-              <h2 className="text-[#f0f0ff] font-semibold text-base">Nova가 잡아내는 결함</h2>
-              <p className="text-xs text-[#8888aa]">CI에서 의도적 결함 코드로 자가 검증 테스트 실행</p>
+              <h2 className="text-[#f0f0ff] font-semibold text-base">Nova 운영 루프가 잡아내는 결함</h2>
+              <p className="text-xs text-[#8888aa]">설계, 보안, API 계약, 시크릿 관리까지 커밋 전에 확인</p>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export default function CatchesSection() {
                 className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_2fr] gap-3 px-6 py-4 hover:bg-[#1a1a24] transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-lg">{c.icon}</span>
+                  <span className="text-[11px] font-mono text-[#ef4444] w-8">{c.icon}</span>
                   <span className="text-sm text-[#f0f0ff] font-mono">{c.defect}</span>
                 </div>
                 <div>

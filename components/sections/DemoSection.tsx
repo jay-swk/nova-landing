@@ -90,7 +90,7 @@ const demos: {
       { type: "pass", content: "Sprint 2 PASS — AuthMiddleware verified", delay: 700 },
       { type: "blank", content: "", delay: 200 },
       { type: "comment", content: "# Sprint 3: 전체 통합 검증", delay: 400 },
-      { type: "command", content: "/nova:verify --strict" },
+      { type: "command", content: "/nova:check --strict" },
       { type: "pass", content: "PASS — 5/5 dimensions. Gap: none.", delay: 700 },
       { type: "output", content: "NOVA-STATE.md updated", delay: 300 },
     ],

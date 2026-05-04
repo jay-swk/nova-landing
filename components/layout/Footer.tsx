@@ -11,8 +11,8 @@ export default function Footer() {
               <span className="font-bold text-[#f0f0ff]">Nova</span>
             </div>
             <p className="text-sm text-[#8888aa] leading-relaxed">
-              AI 오케스트레이터 루프 안의 Quality Gate. 코드를 생성하지 않고,
-              생성된 코드가 제대로 됐는지 검증한다.
+              Claude Code 위에서 에이전트의 환경, 맥락, 검증, 협업, 진화를 운영하는
+              AI Agent Ops 프레임워크.
             </p>
           </div>
 
@@ -57,6 +57,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 ["Problem", "#problem"],
+                ["Evaluation", "#evaluation"],
                 ["How It Works", "#how-it-works"],
                 ["Features", "#features"],
                 ["Commands", "#commands"],

@@ -20,7 +20,7 @@ const steps = [
   {
     id: "nova",
     label: "Nova",
-    sublabel: "독립 Evaluator가 검증",
+    sublabel: "독립 Evaluator 루프",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M9 12l2 2 4-4M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
@@ -72,12 +72,12 @@ export default function HowItWorksSection() {
             How It Works
           </div>
           <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#f0f0ff] mb-4">
-            Generator → Nova → Done
+            가장 강한 실행 루프: Generator → Evaluator
           </h2>
           <p className="text-[#8888aa] max-w-2xl mx-auto text-lg">
-            코드를 만든 에이전트와 검증하는 에이전트는 항상 다르다.
+            Nova 전체는 Agent Ops 프레임워크이고, 그 안의 커밋 전 루프는 명확하다.
             <br />
-            <span className="text-[#f0f0ff]">Generator-Evaluator 분리</span>가 핵심이다.
+            코드를 만든 에이전트와 검증하는 에이전트를 분리한다.
           </p>
         </motion.div>
 
@@ -96,7 +96,7 @@ export default function HowItWorksSection() {
               >
                 {step.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#7c3aed] text-white text-xs font-mono font-semibold">
-                    Quality Gate
+                    Verification Loop
                   </div>
                 )}
                 <div

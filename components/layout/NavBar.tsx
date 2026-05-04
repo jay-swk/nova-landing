@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 
 const navLinks = [
   { label: "Problem", href: "#problem" },
+  { label: "Evaluation", href: "#evaluation" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
   { label: "Demo", href: "#demo" },
@@ -72,11 +73,11 @@ export default function NavBar({ version }: { version?: string }) {
           </div>
           <span className="font-bold text-[#f0f0ff] tracking-tight">Nova</span>
           <span className="hidden sm:inline text-xs text-[#8888aa] font-mono bg-[#111118] px-2 py-0.5 rounded-full border border-[#2a2a3a]">
-            v{version ?? "4.4.0"}
+            v{version ?? "5.29.0"}
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -109,7 +110,7 @@ export default function NavBar({ version }: { version?: string }) {
             Install
           </a>
           <button
-            className="md:hidden p-2 text-[#8888aa] hover:text-[#f0f0ff] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7c3aed] focus-visible:ring-offset-1 focus-visible:ring-offset-[#0a0a0f]"
+            className="lg:hidden p-2 text-[#8888aa] hover:text-[#f0f0ff] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7c3aed] focus-visible:ring-offset-1 focus-visible:ring-offset-[#0a0a0f]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={menuOpen}
@@ -133,7 +134,7 @@ export default function NavBar({ version }: { version?: string }) {
           id="mobile-menu"
           role="navigation"
           aria-label="모바일 메뉴"
-          className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[#2a2a3a] px-4 py-3 flex flex-col gap-1"
+          className="lg:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[#2a2a3a] px-4 py-3 flex flex-col gap-1"
           initial={{ opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}

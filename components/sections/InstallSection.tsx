@@ -9,7 +9,7 @@ claude plugin marketplace add TeamSPWK/nova
 claude plugin install nova@nova-marketplace
 
 # Start
-/nova:next   # 다음 할 일 확인`;
+/nova:next   # 현재 상태와 다음 행동 확인`;
 
 const updateCode = `# Update
 claude plugin update nova@nova-marketplace
@@ -20,22 +20,22 @@ claude plugin marketplace remove nova-marketplace`;
 
 const features = [
   {
-    icon: "⚡",
+    icon: "30s",
     label: "30초 설치",
     desc: "두 줄 명령어로 즉시 설치",
   },
   {
-    icon: "🔑",
+    icon: "KEY",
     label: "API 키 불필요",
-    desc: "/nova:xv 제외 모든 기능 무료",
+    desc: "/nova:ask 외 대부분 로컬 실행",
   },
   {
-    icon: "🔄",
+    icon: "AUTO",
     label: "자동 적용",
-    desc: "설치 즉시 모든 대화에 활성화",
+    desc: "세션마다 운영 규칙 로드",
   },
   {
-    icon: "🛡",
+    icon: "MIT",
     label: "MIT 라이선스",
     desc: "오픈소스, 상업적 사용 가능",
   },
@@ -69,7 +69,7 @@ export default function InstallSection() {
             30초면 설치 완료
           </h2>
           <p className="text-[#8888aa] max-w-xl mx-auto text-lg">
-            두 줄 명령어로 Nova Quality Gate가 모든 Claude Code 세션에 활성화됩니다.
+            두 줄 명령어로 Nova Agent Ops가 모든 Claude Code 세션의 실행 경로에 붙습니다.
           </p>
         </motion.div>
 
@@ -82,7 +82,7 @@ export default function InstallSection() {
               transition={{ duration: dur(0.4), delay: del(0.2 + i * 0.08) }}
               className="rounded-xl border border-[#2a2a3a] bg-[#111118] p-4 text-center"
             >
-              <div className="text-2xl mb-2">{f.icon}</div>
+              <div className="text-lg mb-2 font-mono font-semibold text-[#a855f7]">{f.icon}</div>
               <div className="text-[#f0f0ff] text-sm font-semibold mb-1">{f.label}</div>
               <div className="text-[#8888aa] text-xs">{f.desc}</div>
             </motion.div>
@@ -147,7 +147,7 @@ export default function InstallSection() {
             </li>
             <li className="flex items-center gap-2">
               <span className="text-[#eab308]">○</span>
-              OpenAI + Google AI Studio API 키 (선택, <code className="font-mono text-xs bg-[#1a1a24] px-1 rounded">/nova:consult</code> 사용 시만 필요)
+              OpenAI + Google AI Studio API 키 (선택, <code className="font-mono text-xs bg-[#1a1a24] px-1 rounded">/nova:ask</code> 사용 시만 필요)
             </li>
           </ul>
         </motion.div>

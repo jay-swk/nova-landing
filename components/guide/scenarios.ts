@@ -26,7 +26,7 @@ export const scenarios: Scenario[] = [
     badge: "Beginner",
     badgeColor: "#22c55e",
     description:
-      "기존 Express 프로젝트에 Todo 기능을 추가합니다. Nova를 설치하고 자연어로 요청하면 끝. 커맨드를 외울 필요 없이 Nova가 백그라운드에서 자동으로 품질을 관리합니다.",
+      "기존 Express 프로젝트에 Todo 기능을 추가합니다. Nova를 설치하고 자연어로 요청하면 끝. 커맨드를 외울 필요 없이 Nova가 백그라운드에서 맥락과 검증 루프를 관리합니다.",
     timeEstimate: "5분",
     steps: [
       {

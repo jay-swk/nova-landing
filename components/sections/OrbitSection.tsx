@@ -103,10 +103,10 @@ const highlights = [
     ),
   },
   {
-    tag: "Quality",
-    title: "Quality Gate 통합",
-    body: "Nova의 Generator-Evaluator 패턴을 내장. 5차원 검증으로 에이전트 산출물의 품질을 자동 보장한다.",
-    detail: ["Generator-Evaluator 분리", "5차원 품질 검증", "커밋 전 하드 게이트"],
+    tag: "Verification",
+    title: "검증 루프 통합",
+    body: "Nova의 Generator-Evaluator 패턴을 내장. 5차원 검증으로 에이전트 산출물의 위험 신호를 커밋 전에 드러낸다.",
+    detail: ["Generator-Evaluator 분리", "5차원 검증", "커밋 전 리스크 차단"],
     color: "#ef4444",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -163,7 +163,7 @@ export default function OrbitSection() {
           </h2>
           <p className="text-[#8888aa] max-w-2xl mx-auto text-lg text-balance mb-8">
             자연어 한 줄로 설계→구현→검증 전체 사이클을 실행한다.
-            역할별 전문 에이전트가 병렬로 작업하고, 독립 Evaluator가 품질을 보장한다.
+            역할별 전문 에이전트가 병렬로 작업하고, 독립 Evaluator가 커밋 전 위험 신호를 확인한다.
           </p>
 
           <div className="max-w-md mx-auto mb-6">
