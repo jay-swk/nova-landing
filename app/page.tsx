@@ -5,6 +5,7 @@ import ProblemSection from "@/components/sections/ProblemSection";
 import EvaluationSection from "@/components/sections/EvaluationSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import CoexistSection from "@/components/sections/CoexistSection";
 import CatchesSection from "@/components/sections/CatchesSection";
 import DemoSection from "@/components/sections/DemoSection";
 import CommandsSection from "@/components/sections/CommandsSection";
@@ -29,6 +30,7 @@ export default async function Home() {
         <EvaluationSection stats={meta.stats} />
         <HowItWorksSection />
         <FeaturesSection />
+        <CoexistSection />
         <CatchesSection />
         <DemoSection />
         <CommandsSection commands={meta.commands} />

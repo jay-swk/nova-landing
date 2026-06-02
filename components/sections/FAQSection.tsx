@@ -16,9 +16,14 @@ const faqItems = [
       "그렇습니다. Claude, GPT, Gemini는 학습 데이터를 상당 부분 공유합니다. 세 모델이 동의해도 공유된 맹점일 수 있습니다. /nova:ask는 단일 판단보다 넓은 다관점 참고 자료를 제공하지만, 최종 결정은 항상 사람의 몫입니다.",
   },
   {
+    question: "Nova와 oh-my-claudecode(OMC), 뭘 써야 하나요?",
+    answer:
+      "둘은 경쟁이 아니라 역할이 다릅니다. OMC는 빠른 생성·자동 오케스트레이션(velocity), Nova는 커밋 전 품질 게이트(안전벨트)입니다. \"빨리 가고 싶다\"면 OMC를, \"AI가 빨리 짜는데 자꾸 미묘하게 깨진다\"가 고민이면 Nova를 그 위에 얹으세요. 같이 쓸 땐 NOVA_COEXIST 공존 모드로 훅 충돌을 없앱니다.",
+  },
+  {
     question: "AI 오케스트레이터와 Nova는 어떻게 함께 쓰나요?",
     answer:
-      "Nova는 오케스트레이터 위나 옆에 놓이는 Agent Ops 레이어입니다. Claude Code가 구현을 맡고, Nova는 프로젝트 지침 로드, worktree 환경 연결, 상태 기록, 독립 검증, 멀티 AI 자문 같은 운영 루프를 제공합니다. 생성 도구와 충돌하기보다 실행 경로를 더 반복 가능하게 만듭니다.",
+      "Nova는 대체재가 아니라 오케스트레이터 옆에 놓이는 Agent Ops 레이어입니다. OMC 같은 velocity 툴이 실행을 몰고, Nova는 커밋 전 게이트·상태 기록·독립 검증을 맡습니다. 둘 다 켜면 SessionStart·PreToolUse 훅이 양쪽에서 쌓이므로, NOVA_COEXIST=1 (또는 bash scripts/nova-coexist.sh on)로 Nova를 커밋 게이트만 남기는 공존 모드로 둘 수 있습니다. 완전 opt-in이라 안 켜면 기존 동작 그대로입니다.",
   },
   {
     question: "MCP 서버는 뭔가요?",

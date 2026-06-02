@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Evaluation", href: "#evaluation" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
+  { label: "Coexist", href: "#coexist" },
   { label: "Demo", href: "#demo" },
   { label: "Commands", href: "#commands" },
   { label: "Orbit", href: "#orbit" },
